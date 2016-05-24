@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="AngularJS" />
+    <meta name="description" content="The Point Test Site" />
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>The Point Test Frame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- Bower Components -->
+    <link href="bower_components/angular-material/angular-material.css" rel="stylesheet" />
+    <!-- Local Styles-->
+    <link href="site.css" rel="stylesheet" />
+    <link href="app/styles/whiteframe.css" rel="stylesheet" />
+    <link href="app/styles/button.css" rel="stylesheet" />
+    <!-- CDN Styles -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body ng-app="App" layout="row" ng-controller="IndexCtrl" ng-cloak>
+
+    <div layout="column" layout-fill>
+        <md-toolbar layout="row" class="md-whiteframe-z1">
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings">
+                    <ng-md-icon icon="{{menuIcon}}" style="fill:white;vertical-align:middle;" ng-click="menuToggle()" hide-gt-sm></ng-md-icon>
+                </md-button>
+                <h2>
+                    <span style="color:white;">ThePoint</span>
+                </h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+    </div>
+
+
+<!--
+    <md-toolbar layout="row" class="md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" hide-gt-md aria-label="Show Menu">
+                <ng-md-icon icon="{{menuIcon}}" style="fill:white;vertical-align:middle;" ng-click="menuToggle()" hide-gt-sm></ng-md-icon>
+            </md-button>
+            <h2 style="color:white;">The Point</h2>
+        </div>
+    </md-toolbar>
+-->
+
+<!--
+<div layout="column" layout-fill>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span>My App's Title</span>
+            <!-- fill up the space between left and right area
+            <span flex></span>
+            <md-button>
+                Hi, I'm a button. I love you.
+            </md-button>
+        </div>
+    </md-toolbar>
+</div>-->
+
+<!--<md-toolbar layout="row" class="md-whiteframe-z1">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" hide-gt-md aria-label="Show Menu">
+            <ng-md-icon icon="{{menuIcon}}" style="fill:white;vertical-align:middle;" ng-click="menuToggle()" hide-gt-sm></ng-md-icon>
+        </md-button>
+        <h2 style="color:white;">The Point</h2>
+    </div>
+</md-toolbar>-->
+
+
+
+
+<!-- 3rd party libraries -->
+<!-- Bower Components -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="bower_components/svg-morpheus/compile/minified/svg-morpheus.js"></script>
+
+<!-- Load app main script -->
+<script src="app/app.js"></script>
+<!-- Load services -->
+<!-- Load controllers -->
+<script src="app/controllers/indexCtrl.js"></script>
+<script src="app/controllers/homeCtrl.js"></script>
+<script src="app/controllers/sideNavLeftCtrl.js"></script>
+<script src="app/controllers/autocompleteCtrl.js"></script>
+<script src="app/controllers/buttonCtrl.js"></script>
+
+<!-- Load custom filters -->
+<!-- Load custom directives -->
+
+
+</body>
+</html>
