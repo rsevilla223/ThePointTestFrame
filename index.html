@@ -4,7 +4,7 @@
     <meta name="keywords" content="AngularJS" />
     <meta name="description" content="The Point Test Site" />
     <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
-    <title>The Point Test Frame</title>
+    <title>Ah hey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!-- Bower Components -->
     <link href="bower_components/angular-material/angular-material.css" rel="stylesheet" />
@@ -17,6 +17,9 @@
 </head>
 <body ng-app="App" layout="row" ng-controller="IndexCtrl" ng-cloak>
 
+
+
+
     <div layout="column" layout-fill>
         <md-toolbar layout="row" class="md-whiteframe-z1">
             <div class="md-toolbar-tools">
@@ -27,6 +30,22 @@
                     <span style="color:white;">ThePoint</span>
                 </h2>
                 <span flex></span>
+                <md-button class="md-icon-button md-accent" aria-label="Search">
+                    <i class="material-icons" style="color:white;">search</i>
+                </md-button>
+                <md-menu md-offset="0 -7">
+                <md-button class="md-icon-button md-accent" aria-label="Person" ng-click="$mdOpenMenu($event)">
+                    <i class="material-icons" style="color:white;">person</i>
+                </md-button>
+                    <md-menu-content width="2">
+                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <md-button class="md-icon-button md-accent" aria-label="More">
+                    <i class="material-icons" style="color:white;">more_horiz</i>
+                </md-button>
             </div>
         </md-toolbar>
     </div>
