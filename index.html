@@ -12,10 +12,24 @@
     <link href="site.css" rel="stylesheet" />
     <link href="app/styles/whiteframe.css" rel="stylesheet" />
     <link href="app/styles/button.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- CDN Styles -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Floating material button style-->
+    <link href="floating_fab/mfb.css" rel="stylesheet"/>
 </head>
 <body ng-app="App" layout="row" ng-controller="IndexCtrl" ng-cloak>
+
+<!-------FLOATING FAB--------->
+<nav mfb-menu position="br" effect="zoomin" label="Share"
+     active-icon="ion-close-round" resting-icon="ion-plus-round"
+     toggling-method="click">
+    <button mfb-button icon="ion-social-facebook" label="Facebook"></button>
+    <button mfb-button icon="ion-social-twitter" label="Twitter"></button>
+    <button mfb-button icon="ion-social-pinterest" label="Pinterest"></button>
+</nav>
+<!-------END FLOATING FAB--------->
 
 <!-------RIGHT SLIDEOUT MENU-------->
 <md-sidenav class="site-sidenav md-sidenav-right md-whiteframe-z2"
@@ -154,6 +168,7 @@
 
 <!-- Load custom filters -->
 <!-- Load custom directives -->
+<script src="floating_fab/mfb-directive.js"></script>
 
 
 </body>
