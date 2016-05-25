@@ -17,6 +17,28 @@
 </head>
 <body ng-app="App" layout="row" ng-controller="IndexCtrl" ng-cloak>
 
+<!-------RIGHT SLIDEOUT MENU-------->
+<md-sidenav class="site-sidenav md-sidenav-right md-whiteframe-z2"
+            md-component-id="right"
+            style="background-color:#ffffff;"
+            md-is-locked-open="$mdMedia('gt-sm')">
+    <md-toolbar layout="row" class="md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button md-accent" aria-label="More">
+
+                <i class="material-icons" style="color:white;" ng-click="toggleRight()" hide-gt-sm>more_horiz</i>
+            </md-button>
+            <h2 style="color:white;"></h2>
+        </div>
+    </md-toolbar>
+
+    <h1>Product Carousel</h1>
+
+</md-sidenav>
+<!-------END RIGHT SLIDEOUT MENU-------->
+
+
+<!-------LEFT SLIDEOUT MENU-------->
 <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
             md-component-id="left"
             style="background-color:#ffffff;"
@@ -37,8 +59,9 @@
     </md-list>
 
 </md-sidenav>
+<!-------END LEFT SLIDEOUT MENU-------->
 
-
+<!-------MAIN TOOLBAR-------->
     <div layout="column" layout-fill>
         <md-toolbar layout="row" class="md-whiteframe-z1">
             <div class="md-toolbar-tools">
@@ -63,11 +86,12 @@
                     </md-menu-content>
                 </md-menu>
                 <md-button class="md-icon-button md-accent" aria-label="More">
-                    <i class="material-icons" style="color:white;">more_horiz</i>
+                    <i class="material-icons" style="color:white;" ng-click="toggleRight()" hide-gt-sm>more_horiz</i>
                 </md-button>
             </div>
         </md-toolbar>
     </div>
+<!-------END MAIN TOOLBAR-------->
 
 
 <!--

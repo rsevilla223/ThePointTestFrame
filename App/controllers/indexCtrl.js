@@ -24,6 +24,11 @@ app.controller('IndexCtrl', function ($scope, $mdSidenav, $state) {
               .toggle();
     }
 
+    $scope.toggleRight = function () {
+        $mdSidenav('right')
+            .toggle();
+    }
+
     $scope.menuIcon = 'menu';
     $scope.menuToggle = function () {
         if ($scope.menuIcon == 'menu') {
