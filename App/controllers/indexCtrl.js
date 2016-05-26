@@ -14,6 +14,16 @@ app.controller('IndexCtrl', function ($scope, $mdSidenav, $state, $mdDialog) {
 
     $scope.title = 'home';
 
+    $scope.images = [
+        "http://vasyabigi.github.io/angular-slick/images/lazyfonz1.png",
+        "http://vasyabigi.github.io/angular-slick/images/lazyfonz2.png",
+        "http://vasyabigi.github.io/angular-slick/images/lazyfonz3.png",
+        "http://vasyabigi.github.io/angular-slick/images/lazyfonz4.png",
+        "http://vasyabigi.github.io/angular-slick/images/lazyfonz5.png",
+        "http://vasyabigi.github.io/angular-slick/images/lazyfonz6.png",
+    ];
+
+
     $scope.go = function (path, title) {
         $state.go(path);
         $scope.title = title;

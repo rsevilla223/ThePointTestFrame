@@ -18,6 +18,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Floating material button style-->
     <link href="floating_fab/mfb.css" rel="stylesheet"/>
+    <!--Slick for carousel-->
+    <link href="bower_components/slick-carousel/slick/slick.css" rel="stylesheet" >
 </head>
 <body ng-app="App" layout="row" ng-controller="IndexCtrl" ng-cloak>
 
@@ -46,7 +48,14 @@
         </div>
     </md-toolbar>
 
-    <h1>Product Carousel</h1>
+
+<!---BEGIN CAROUSEL IN RIGHT NAV------>
+    <slick  infinite="false" vertical="true" verticalSwiping="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="2">
+        <div ng-repeat="image in images">
+            <img data-lazy="{{image}}">
+        </div>
+    </slick>
+    <!---END CAROUSEL IN RIGHT NAV------>
 
 </md-sidenav>
 <!-------END RIGHT SLIDEOUT MENU-------->
@@ -106,6 +115,7 @@
                 </md-button>
             </div>
         </md-toolbar>
+
     </div>
 <!-------END MAIN TOOLBAR-------->
 
@@ -171,6 +181,10 @@
 <!-- Load custom filters -->
 <!-- Load custom directives -->
 <script src="floating_fab/mfb-directive.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/slick-carousel/slick/slick.js"></script>
+<script src="bower_components/angular-slick/dist/slick.js"></script>
 
 
 </body>

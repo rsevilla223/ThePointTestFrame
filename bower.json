@@ -22,6 +22,7 @@
     "angular-material-icons": "*",
     "angular-messages": "*",
     "angular-ui-router": "*",
-    "svg-morpheus": "*"
+    "svg-morpheus": "*",
+    "angular-slick": "^0.2.1"
   }
 }

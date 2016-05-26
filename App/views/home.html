@@ -6,6 +6,11 @@
         <div class="page-header text-center">
             <h1>Angular Material Kitchen Sink</h1>
         </div>
+        <slick dots="true" infinite="false" vertical="false" speed="300" slides-to-show="5" touch-move="true" slides-to-scroll="1">
+            <div ng-repeat="image in images">
+                <img src="{{image}}">
+            </div>
+        </slick>
     </div>
     <div layout="row" layout-sm="column">
         <div flex style="margin:10px;">

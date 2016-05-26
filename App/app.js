@@ -1,5 +1,5 @@
 ﻿
-var app = angular.module('App', ['ui.router', 'ngMaterial', 'ngMessages', 'ngMdIcons', 'ng-mfb']);
+var app = angular.module('App', ['ui.router', 'ngMaterial', 'ngMessages', 'ngMdIcons', 'ng-mfb', 'slick']);
 
 app.config(function ($stateProvider,$urlRouterProvider) {
 
