@@ -75,7 +75,7 @@
 </md-sidenav>
 <!-------END LEFT SLIDEOUT MENU-------->
 
-<!-------MAIN TOOLBAR-------->
+<!-------MAIN TOOLBAR--------->
     <div layout="column" layout-fill>
         <md-toolbar layout="row" class="md-whiteframe-z1">
             <div class="md-toolbar-tools">
@@ -86,9 +86,11 @@
                     <span style="color:white;">ThePoint</span>
                 </h2>
                 <span flex></span>
-                <md-button class="md-icon-button md-accent" aria-label="Search">
-                    <i class="material-icons" style="color:white;">search</i>
+                <div class="dialog-demo-content" layout="column" layout-align="center center" style="width:8%">
+                <md-button class="md-icon-button md-accent" aria-label="Search" id="right">
+                    <i class="material-icons" style="color:white;" ng-click="openFromLeft()">search</i>
                 </md-button>
+                </div>
                 <md-menu md-offset="0 -7">
                 <md-button class="md-icon-button md-accent" aria-label="Person" ng-click="$mdOpenMenu($event)">
                     <i class="material-icons" style="color:white;">person</i>
