@@ -75,11 +75,25 @@
         </div>
     </md-toolbar>
 
-    <md-list>
+    <md-list ng-repeat="child in navElements.children">
+        <md-list-item ng-click="go(item.path,item.name);menuToggle();" class="parentMenuItem">
+            <p style="font-size:18px;color:black;">{{child.title}}</p>
+        </md-list-item>
+        <md-list-item ng-repeat="gch in child.children" ng-click="go(item.path,item.name);menuToggle();" class="childMenuItem">
+            <p style="font-size:18px;color:black;">---{{gch.title}}</p>
+        </md-list-item>
+
+    </md-list>
+
+
+
+
+
+    <!--<md-list>
         <md-list-item ng-repeat="item in menuItems" ng-click="go(item.path,item.name);menuToggle();">
             <p style="font-size:18px;color:black;">{{item.name}}</p>
         </md-list-item>
-    </md-list>
+    </md-list>-->
 
 </md-sidenav>
 <!-------END LEFT SLIDEOUT MENU-------->
@@ -116,7 +130,43 @@
             </div>
         </md-toolbar>
 
+        <h2>Angular.js JSON Fetching Example </h2>
+        <p id="demo"></p>
+        <p id="output"></p>
+
+        <!-- <table>
+             <tr>
+                 <th>Title</th>
+                 <th>Path</th>
+                 <th>Children</th>
+             </tr>
+             <tr ng-repeat="elements in navElements">
+                 <td>{{navElements.title}}</td>
+                 <td>{{navElements.path}}</td>
+                 <td>{{navElements.children}}</td>
+             </tr>
+         </table> -->
+        <script>
+            var text = '{"employees":[' +
+                    '{"firstName":"John","lastName":"Doe" },' +
+                    '{"firstName":"Anna","lastName":"Smith" },' +
+                    '{"firstName":"Peter","lastName":"Jones" }]}';
+            obj = JSON.parse(text);
+            document.getElementById("demo").innerHTML = obj.employees[0].firstName;
+
+
+        </script>
+
+
+        <main class="md-padding" layout="row" flex>
+            <md-content flex id="content">
+                <div class="fade-view" ui-view="">
+                </div>
+            </md-content>
+        </main>
+
     </div>
+
 <!-------END MAIN TOOLBAR-------->
 
 

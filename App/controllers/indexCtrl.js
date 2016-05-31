@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('IndexCtrl', function ($scope, $mdSidenav, $state, $mdDialog) {
+app.controller('IndexCtrl', function ($scope, $mdSidenav, $state, $mdDialog, $http) {
     $scope.menuItems = [
       { name: 'Products', path: 'autocomplete' },
       { name: 'Footware', path: 'bottomSheet' },
@@ -11,6 +11,29 @@ app.controller('IndexCtrl', function ($scope, $mdSidenav, $state, $mdDialog) {
       { name: 'From The Field', path: 'progressCircular' },
       { name: 'About Us', path: 'progressLinear' },
     ];
+
+
+
+    $http.get('http://wcmdemo.pointsourcellc.com:10039/wps/wcm/connect/thepoint+content/home/?srv=cmpnt&source=library&cmpntid=13250658-c5f4-4bcc-8f44-555b0a3a1274').success(function(data) {
+        $scope.navElements = data;
+        console.log(data);
+        var jsonNav = data;
+        var count = Object.keys(jsonNav).length;
+
+        $scope.groups = [];
+        for (var i=0; i<Object.keys(jsonNav).length; i++){
+            $scope.groups[i] = {
+                name: jsonNav[i],
+                children: []
+            };
+            console.log(Object.title(jsonNav));
+        }
+
+
+    });
+
+
+
 
     $scope.title = 'home';
 
