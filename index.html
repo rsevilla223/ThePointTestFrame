@@ -77,23 +77,13 @@
 
     <md-list ng-repeat="child in navElements.children">
         <md-list-item ng-click="go(item.path,item.name);menuToggle();" class="parentMenuItem">
-            <p style="font-size:18px;color:black;">{{child.title}}</p>
+            <p style="font-size:18px;color:black;">{{child.title}}</p><i ng-if="child.children.length>0" class="material-icons" style="color:black;">keyboard_arrow_down</i>
         </md-list-item>
+        <md-divider></md-divider>
         <md-list-item ng-repeat="gch in child.children" ng-click="go(item.path,item.name);menuToggle();" class="childMenuItem">
-            <p style="font-size:18px;color:black;">---{{gch.title}}</p>
+            <p style="font-size:18px;color:black;">{{gch.title}}</p>
         </md-list-item>
-
     </md-list>
-
-
-
-
-
-    <!--<md-list>
-        <md-list-item ng-repeat="item in menuItems" ng-click="go(item.path,item.name);menuToggle();">
-            <p style="font-size:18px;color:black;">{{item.name}}</p>
-        </md-list-item>
-    </md-list>-->
 
 </md-sidenav>
 <!-------END LEFT SLIDEOUT MENU-------->

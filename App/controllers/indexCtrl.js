@@ -108,6 +108,7 @@ app.controller('IndexCtrl', function ($scope, $mdSidenav, $state, $mdDialog, $ht
             $mdSidenav('left')
               .close();
             $scope.menuIcon = 'menu';
+            
         }
     }
 });
