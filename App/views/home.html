@@ -1,5 +1,9 @@
 ﻿<md-content>
 
+    <div>
+        {{carouselContent.components[0].carouselData}}
+    </div>
+
     <div ng-repeat="image in images">
         <img data-lazy="{{image}}">
     </div>
@@ -36,13 +40,15 @@
 
 </div>
 
-    <div layout="row" layout-sm="column">
+   <!-- <div layout="row" layout-sm="column">
         <slick dots="true" infinite="false" vertical="false" speed="300" slides-to-show="5" touch-move="true" slides-to-scroll="1">
             <div ng-repeat="image in images">
                 <img src="{{image}}">
             </div>
         </slick>
-    </div>
+    </div>-->
+
+    <div flex="" class="ps-hero-image-left-carousel" autoplay="true" autoplay-speed="7000.0" swipe="true" infinite-loop="true" show-arrows="true" show-dots="true" slides-to-show="1" vertical="false" center-mode="false" center-mode-padding="15%" fade="No" component-data="carouselContent.components[0].carouselData"></div>
 
 
 </md-content>

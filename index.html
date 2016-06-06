@@ -80,8 +80,8 @@
             <p style="font-size:18px;color:black;">{{child.title}}</p><i ng-if="child.children.length>0" class="material-icons" style="color:black;">keyboard_arrow_down</i>
         </md-list-item>
         <md-divider></md-divider>
-        <md-list-item ng-repeat="gch in child.children" ng-click="go(item.path,item.name);menuToggle();" class="childMenuItem">
-            <p style="font-size:18px;color:black;">{{gch.title}}</p>
+        <md-list-item ng-repeat="gch in child.children" ng-click="go(item.path,item.name); menuToggle();" class="childMenuItem">
+            <p style="font-size:16px;color:black;">{{gch.title}}</p>
         </md-list-item>
     </md-list>
 
@@ -120,32 +120,8 @@
             </div>
         </md-toolbar>
 
-        <h2>Angular.js JSON Fetching Example </h2>
-        <p id="demo"></p>
-        <p id="output"></p>
 
-        <!-- <table>
-             <tr>
-                 <th>Title</th>
-                 <th>Path</th>
-                 <th>Children</th>
-             </tr>
-             <tr ng-repeat="elements in navElements">
-                 <td>{{navElements.title}}</td>
-                 <td>{{navElements.path}}</td>
-                 <td>{{navElements.children}}</td>
-             </tr>
-         </table> -->
-        <script>
-            var text = '{"employees":[' +
-                    '{"firstName":"John","lastName":"Doe" },' +
-                    '{"firstName":"Anna","lastName":"Smith" },' +
-                    '{"firstName":"Peter","lastName":"Jones" }]}';
-            obj = JSON.parse(text);
-            document.getElementById("demo").innerHTML = obj.employees[0].firstName;
-
-
-        </script>
+        <div id="json-parse"></div> <!--json2html test-->
 
 
         <main class="md-padding" layout="row" flex>
@@ -159,44 +135,6 @@
 
 <!-------END MAIN TOOLBAR-------->
 
-
-<!--
-    <md-toolbar layout="row" class="md-whiteframe-z1">
-        <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" hide-gt-md aria-label="Show Menu">
-                <ng-md-icon icon="{{menuIcon}}" style="fill:white;vertical-align:middle;" ng-click="menuToggle()" hide-gt-sm></ng-md-icon>
-            </md-button>
-            <h2 style="color:white;">The Point</h2>
-        </div>
-    </md-toolbar>
--->
-
-<!--
-<div layout="column" layout-fill>
-    <md-toolbar>
-        <div class="md-toolbar-tools">
-            <span>My App's Title</span>
-            <!-- fill up the space between left and right area
-            <span flex></span>
-            <md-button>
-                Hi, I'm a button. I love you.
-            </md-button>
-        </div>
-    </md-toolbar>
-</div>-->
-
-<!--<md-toolbar layout="row" class="md-whiteframe-z1">
-    <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" hide-gt-md aria-label="Show Menu">
-            <ng-md-icon icon="{{menuIcon}}" style="fill:white;vertical-align:middle;" ng-click="menuToggle()" hide-gt-sm></ng-md-icon>
-        </md-button>
-        <h2 style="color:white;">The Point</h2>
-    </div>
-</md-toolbar>-->
-
-
-
-
 <!-- 3rd party libraries -->
 <!-- Bower Components -->
 <script src="bower_components/angular/angular.js"></script>
@@ -209,7 +147,7 @@
 <script src="bower_components/svg-morpheus/compile/minified/svg-morpheus.js"></script>
 
 <!-- Load app main script -->
-<script src="app/app.js"></script>
+<script src="App/app.js"></script>
 <!-- Load services -->
 <!-- Load controllers -->
 <script src="app/controllers/indexCtrl.js"></script>
@@ -225,6 +163,14 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/slick-carousel/slick/slick.js"></script>
 <script src="bower_components/angular-slick/dist/slick.js"></script>
+<script src="bower_components/domjson/dist/domjson.min.js"></script>
+<script src="json2html/json2html.js"></script>
+<script src="json2html/jquery.json2html.js"></script>
+<script src="App/jsotest"></script>
+<script src="App/mainContent.js"></script>
+
+<script src="pointsource_components/ps-widgets-module.js"></script>
+<script src="pointsource_components/ps-widgets-directives.js"></script>
 
 
 </body>

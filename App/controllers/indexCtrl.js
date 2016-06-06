@@ -13,24 +13,58 @@ app.controller('IndexCtrl', function ($scope, $mdSidenav, $state, $mdDialog, $ht
     ];
 
 
+    /*$.getJSON('json/content.json', function (results) {
+        console.log(results);
+        var content = results;
+        var DOMDocumentFragment = domJSON.toDOM(content)
+        console.log(DOMDocumentFragment);
+    });*/
+
+
+
+    /*$http.get('http://wcmdemo.pointsourcellc.com:10039/wps/wcm/myconnect/ThePoint+Content/home?renderMode=json').success(function(data){
+        $scope.contentElements = data;
+        //console.log(data);
+        var content = data;
+        var DOMDocumentFragment = domJSON.toDOM(content);
+    });*/
+
+    $.getJSON('json/content.json', function (results) {
+        console.log(results);
+        $scope.carouselContent = results;
+        
+    });
+
 
     $http.get('http://wcmdemo.pointsourcellc.com:10039/wps/wcm/connect/thepoint+content/home/?srv=cmpnt&source=library&cmpntid=13250658-c5f4-4bcc-8f44-555b0a3a1274').success(function(data) {
         $scope.navElements = data;
-        console.log(data);
-        var jsonNav = data;
-        var count = Object.keys(jsonNav).length;
-
-        $scope.groups = [];
-        for (var i=0; i<Object.keys(jsonNav).length; i++){
-            $scope.groups[i] = {
-                name: jsonNav[i],
-                children: []
-            };
-            console.log(Object.title(jsonNav));
-        }
-
-
+        //console.log(data);
     });
+
+
+    var chartData = { groups:
+        [{value:100,label:'Day 1'},
+            {value:50,label:'Day 2'},
+            {value:150,label:'Day 3'},
+            {value:40,label:'Day 4'},
+            {value:50,label:'Day 5'}
+        ]};
+
+    var transforms = {
+        barChart: [
+            {'<>':'ul','class':'barChart','html':function() {
+                return($.json2html(this.groups,transforms.group));
+            }}
+        ],
+        group: [
+            {'<>':'li','class':'group','html':[
+                {'<>':'div','class':'bar','style':'height:${value}px;'},
+                {'<>':'div','class':'label','html':'${label}'}
+            ]}
+        ]
+    };
+
+    $('#chart').json2html(chartData, transforms.barChart);
 
 
 
